@@ -38,9 +38,8 @@
                 v2f o;
                 o.pos = float4(p.xyz, 1.0);// ワールド座標を直接渡す
                 if(p.w < 1.0){
-                    o.color = float4(0, p.w, 0, 1);// 黒から緑
-                }else{
-                    o.color = float4(p.w - 1.0, 1, p.w - 1.0, 1);// 緑から白
+                    //o.color = float4(0, p.w, 0, 1);// 黒から緑
+                    o.color = float4(p.w, 1-p.w, 0, 1);
                 }
 
                 float2 uv = p.xz / 10.0 + 0.5;// [0,1]に正規化
